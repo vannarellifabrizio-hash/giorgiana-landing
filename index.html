@@ -1,0 +1,915 @@
+<title>Giorgiana Bertolino</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Albert+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '495818734690282');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=495818734690282&ev=PageView&noscript=1" /></noscript>
+
+<style>
+  :root{
+    --bg:#FFFFFF;
+    --surface:#FFFFFF;
+    --surface-alt:#FAF8F7;
+    --ink:#2A2320;
+    --ink-soft:#6E5D54;
+    --accent:#9C5B4A;
+    --accent-soft:#EFDCD3;
+    --line:#E7E1DB;
+    --shadow: 0 1px 2px rgba(42,35,32,.04), 0 8px 24px rgba(42,35,32,.06);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Albert Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.55;
+  }
+  h1,h2,h3,.serif{
+    font-family:"Cormorant Garamond", Georgia, "Times New Roman", serif;
+    font-weight:500;
+    letter-spacing:.005em;
+    text-wrap:balance;
+    margin:0;
+  }
+  strong{font-weight:700; color:var(--ink);}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px;}
+  .eyebrow{
+    font-size:.75rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--accent);
+    font-weight:600;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:.5em;
+    padding:.85em 1.6em;
+    border-radius:999px;
+    font-size:.95rem;
+    font-weight:600;
+    text-decoration:none;
+    border:1px solid transparent;
+    cursor:pointer;
+    transition:transform .15s ease, background .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .btn:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
+  .btn-primary{background:var(--accent); color:#FCF3EE;}
+  .btn-primary:hover{transform:translateY(-1px);}
+  .btn-ghost{background:transparent; color:var(--ink); border-color:var(--line);}
+  .btn-ghost:hover{border-color:var(--accent); color:var(--accent);}
+
+  /* ---- Nav ---- */
+  header.site{
+    position:sticky; top:0; z-index:20;
+    background:color-mix(in srgb, var(--bg) 92%, transparent);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 28px;
+    max-width:1120px; margin:0 auto;
+    gap:16px;
+  }
+  .brand{
+    display:flex; align-items:center; gap:.6em;
+    text-decoration:none; color:var(--ink);
+  }
+  .brand svg{width:26px;height:26px;flex:none;}
+  .brand-text{display:flex; flex-direction:column; line-height:1.2;}
+  .brand-text strong{
+    font-family:"Cormorant Garamond", serif;
+    font-size:1.2rem; font-weight:600; letter-spacing:.02em;
+  }
+  .brand-text small{
+    font-size:.62rem; letter-spacing:.07em; text-transform:uppercase;
+    color:var(--ink-soft); font-weight:500;
+  }
+  .links{display:flex; gap:2.2em; list-style:none; margin:0; padding:0;}
+  .links a{
+    text-decoration:none; font-size:.92rem; color:var(--ink-soft);
+    transition:color .15s ease;
+  }
+  .links a:hover{color:var(--accent);}
+  .nav-cta{display:flex; align-items:center; gap:1.6em;}
+  .nav-toggle{
+    display:none; position:relative; width:40px; height:40px;
+    border:none; background:none; cursor:pointer; padding:0; flex:none;
+  }
+  .nav-toggle span{
+    position:absolute; left:8px; right:8px; height:1.5px; background:var(--ink);
+    transition:transform .2s ease, opacity .2s ease;
+  }
+  .nav-toggle span:nth-child(1){top:14px;}
+  .nav-toggle span:nth-child(2){top:20px;}
+  .nav-toggle span:nth-child(3){top:26px;}
+  .nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+  .nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;}
+  .nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+  #mobileMenu{
+    display:none;
+    position:absolute; top:100%; left:0; right:0;
+    flex-direction:row; flex-wrap:wrap; justify-content:center;
+    gap:8px 22px;
+    background:var(--surface);
+    border-bottom:1px solid var(--line);
+    box-shadow:var(--shadow);
+    padding:16px 20px;
+  }
+  #mobileMenu a{
+    padding:6px 2px; font-size:.92rem; color:var(--ink); text-decoration:none;
+  }
+  #mobileMenu a:hover{color:var(--accent);}
+
+  /* ---- Hero ---- */
+  .hero{padding:40px 0 32px;}
+  .hero .wrap{
+    display:grid;
+    grid-template-columns:1fr .95fr;
+    gap:40px;
+    align-items:start;
+  }
+  .hero h1{
+    font-size:clamp(2rem, 3.4vw + 1rem, 3.2rem);
+    line-height:1.08;
+    margin-top:.4em;
+  }
+  .hero h1 em{color:var(--accent); font-style:italic;}
+  .hero p.lede{
+    margin-top:1.1em;
+    max-width:44ch;
+    font-size:1.05rem;
+    color:var(--ink-soft);
+  }
+  .hero-meta{
+    display:flex; gap:2em; margin-top:1.8em;
+    padding-top:1.2em; border-top:1px solid var(--line);
+  }
+  .hero-meta div{display:flex; flex-direction:column; gap:.2em;}
+  .hero-meta strong{font-family:"Cormorant Garamond",serif; font-size:1.6rem; font-weight:600;}
+  .hero-meta span{font-size:.78rem; color:var(--ink-soft); letter-spacing:.03em;}
+
+  /* ---- Modulo in hero ---- */
+  .hero-form-card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:24px;
+    padding:26px 24px;
+    box-shadow:var(--shadow);
+    display:flex; flex-direction:column; gap:14px;
+  }
+  .hero-form-card h2{font-size:1.5rem;}
+  .hero-form-card .cta-note{margin:0; font-size:.85rem; color:var(--ink-soft);}
+  .radio-row{display:flex; gap:8px; flex-wrap:wrap;}
+  .radio-opt{
+    display:flex; align-items:center; justify-content:center; gap:.5em;
+    border:1px solid var(--line); border-radius:999px;
+    padding:.6em 1em; font-size:.88rem; cursor:pointer; flex:1;
+    transition:border-color .15s ease, background .15s ease;
+  }
+  .radio-opt input{accent-color:var(--accent); margin:0;}
+  .radio-opt:has(input:checked){border-color:var(--accent); background:var(--accent-soft);}
+
+  section{padding:52px 0;}
+  section.tight{padding:36px 0;}
+  .section-head{max-width:56ch; margin-bottom:28px;}
+  .section-head h2{font-size:clamp(1.6rem, 2vw + 1rem, 2.3rem);}
+  .section-head p{color:var(--ink-soft); margin-top:.7em; font-size:1rem;}
+
+  .alt-bg{background:var(--bg); border-top:1px solid var(--line);}
+
+  /* ---- Servizi ---- */
+  .services{display:grid; grid-template-columns:repeat(4,1fr); gap:18px;}
+  .service-card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:22px 20px;
+    display:flex; flex-direction:column; gap:10px;
+    box-shadow:var(--shadow);
+  }
+  .swatch{width:34px; height:34px; border-radius:50%; border:1px solid var(--line);}
+  .service-card h3{font-size:1.3rem;}
+  .service-card p{font-size:.92rem; color:var(--ink-soft); flex:1; margin:0;}
+  .service-note{
+    font-size:.82rem; color:var(--ink-soft);
+    padding-top:10px; border-top:1px dashed var(--line);
+  }
+
+  /* ---- Vantaggi ---- */
+  .values{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .value-card{display:flex; flex-direction:column; gap:10px;}
+  .value-card .icon{
+    width:46px; height:46px; border-radius:50%;
+    background:var(--accent-soft); display:flex; align-items:center; justify-content:center;
+  }
+  .value-card svg{width:22px; height:22px; color:var(--accent);}
+  .value-card h3{font-size:1.15rem; font-family:"Cormorant Garamond",serif; font-weight:600;}
+  .value-card p{font-size:.92rem; color:var(--ink-soft); margin:0;}
+
+  /* ---- Banda CTA intermedia ---- */
+  .cta-band{
+    background:var(--accent-soft);
+    border-radius:24px;
+    padding:30px 32px;
+    display:flex; flex-direction:column; align-items:flex-start; gap:12px;
+  }
+  .cta-band h2{font-size:clamp(1.4rem, 1.4vw + 1rem, 2rem); max-width:26ch;}
+  .cta-band p{max-width:58ch; color:var(--ink-soft); margin:0;}
+  .cta-band .btn{margin-top:6px;}
+
+  /* ---- Processo ---- */
+  .process{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:0;
+    border:1px solid var(--line); border-radius:18px; overflow:hidden;
+    background:var(--surface);
+  }
+  .step{
+    padding:22px 20px;
+    border-left:1px solid var(--line);
+    display:flex; flex-direction:column; gap:8px;
+  }
+  .step:first-child{border-left:none;}
+  .step .num{
+    font-family:"Cormorant Garamond",serif; font-style:italic;
+    color:var(--accent); font-size:1.5rem;
+  }
+  .step h3{font-size:1.08rem; font-family:"Albert Sans",sans-serif; font-weight:700;}
+  .step p{font-size:.88rem; color:var(--ink-soft); margin:0;}
+
+  /* ---- Prima/Dopo (slider) ---- */
+  .gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
+  .gallery figure{margin:0; display:flex; flex-direction:column; gap:8px;}
+  .ba-slider{
+    --pos:50%;
+    position:relative;
+    aspect-ratio:480/729;
+    border-radius:16px;
+    border:1px solid var(--line);
+    background:var(--surface);
+    overflow:hidden;
+    touch-action:none;
+    user-select:none;
+    cursor:ew-resize;
+  }
+  .ba-img{
+    position:absolute; inset:0;
+    display:flex; align-items:center; justify-content:center;
+    background:var(--surface-alt);
+  }
+  .ba-img img{width:100%; height:100%; object-fit:cover; object-position:center top;}
+  .ba-before{clip-path:inset(0 calc(100% - var(--pos)) 0 0);}
+  .ba-tag{
+    position:absolute; top:14px;
+    font-size:.68rem; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--ink-soft); background:color-mix(in srgb, var(--bg) 80%, transparent);
+    padding:.35em .75em; border-radius:999px;
+  }
+  .ba-tag.before{left:14px;}
+  .ba-tag.after{right:14px;}
+  .ba-divider{
+    position:absolute; top:0; bottom:0; left:var(--pos);
+    width:0; pointer-events:none;
+  }
+  .ba-divider::before{
+    content:""; position:absolute; top:0; bottom:0; left:0; width:2px;
+    background:var(--surface); box-shadow:0 0 0 1px var(--line); transform:translateX(-1px);
+  }
+  .ba-handle{
+    position:absolute; top:50%; left:0; transform:translate(-50%,-50%);
+    width:44px; height:44px; border-radius:50%;
+    background:var(--surface); border:1px solid var(--line); box-shadow:var(--shadow);
+    display:flex; align-items:center; justify-content:center;
+    pointer-events:auto; cursor:ew-resize;
+  }
+  .ba-handle:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
+  .ba-handle svg{width:18px; height:18px; color:var(--accent);}
+  .ba-hint{font-size:.78rem; color:var(--ink-soft); text-align:center;}
+
+  /* ---- Instagram ---- */
+  .ig-scroll{
+    display:flex; gap:14px; overflow-x:auto; scroll-snap-type:x mandatory;
+    padding-bottom:4px; scrollbar-width:none;
+  }
+  .ig-scroll::-webkit-scrollbar{display:none;}
+  .ig-tile{
+    flex:0 0 200px; scroll-snap-align:start; aspect-ratio:1/1;
+    border-radius:16px; border:1px solid var(--line); background:var(--surface-alt);
+    overflow:hidden; display:flex; align-items:center; justify-content:center;
+    position:relative; text-decoration:none; color:var(--ink-soft);
+  }
+  .ig-tile svg{width:42%; height:42%;}
+  .ig-dots{display:flex; gap:8px; justify-content:center; margin-top:18px;}
+  .ig-dot{
+    width:7px; height:7px; border-radius:50%; border:none; background:var(--line);
+    padding:0; cursor:pointer;
+  }
+  .ig-dot.active{background:var(--accent); width:20px; border-radius:999px; transition:width .2s ease, background .2s ease;}
+
+  /* ---- Chi sono ---- */
+  .about{display:grid; grid-template-columns:.85fr 1.15fr; gap:36px; align-items:center;}
+  .about-portrait{
+    aspect-ratio:3/4; border-radius:20px;
+    background:linear-gradient(155deg, var(--surface-alt), var(--surface) 60%);
+    border:1px solid var(--line); position:relative; overflow:hidden;
+  }
+  .about-portrait svg{position:absolute; inset:0; width:100%; height:100%;}
+  .about-portrait img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 15%;}
+  .about-body p{color:var(--ink-soft); font-size:1rem;}
+  .credentials{display:flex; gap:28px; margin-top:1.2em; flex-wrap:wrap;}
+  .credentials div strong{display:block; font-family:"Cormorant Garamond",serif; font-size:1.5rem;}
+  .credentials div span{font-size:.78rem; color:var(--ink-soft);}
+
+  /* ---- Testimonianze ---- */
+  .quotes{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
+  .quote-card{
+    background:var(--surface); border:1px solid var(--line); border-radius:18px;
+    padding:22px; display:flex; flex-direction:column; gap:12px; box-shadow:var(--shadow);
+  }
+  .quote-card p{font-family:"Cormorant Garamond",serif; font-size:1.2rem; font-style:italic; margin:0; color:var(--ink);}
+  .quote-who{display:flex; align-items:center; gap:.7em;}
+  .quote-who .dot{width:34px;height:34px;border-radius:50%;background:var(--accent-soft); display:flex;align-items:center;justify-content:center; font-family:"Cormorant Garamond",serif; color:var(--accent); font-weight:600;}
+  .quote-who span{font-size:.82rem; color:var(--ink-soft);}
+
+  /* ---- Contatti ---- */
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px 40px;}
+  .info-row{display:flex; gap:14px; align-items:flex-start;}
+  .info-row svg{flex:none; width:20px; height:20px; color:var(--accent); margin-top:3px;}
+  .info-row strong{display:block; font-size:.95rem;}
+  .info-row span, .info-row a{font-size:.88rem; color:var(--ink-soft); text-decoration:none;}
+  .info-row a:hover{color:var(--accent);}
+  .hours{display:flex; justify-content:space-between; font-size:.88rem; padding:6px 0; border-bottom:1px dashed var(--line);}
+  .hours span:last-child{color:var(--ink-soft); font-variant-numeric:tabular-nums;}
+
+  form.booking{display:flex; flex-direction:column; gap:12px;}
+  .field{display:flex; flex-direction:column; gap:6px;}
+  .field label{font-size:.78rem; letter-spacing:.04em; color:var(--ink-soft); text-transform:uppercase;}
+  .field input, .field select, .field textarea{
+    font-family:inherit; font-size:1rem; padding:.8em .9em;
+    border:1px solid var(--line); border-radius:10px; background:var(--bg); color:var(--ink);
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{outline:2px solid var(--accent); outline-offset:1px;}
+  form.booking .btn-primary{align-self:stretch; border:none; text-align:center;}
+  .form-note{font-size:.78rem; color:var(--ink-soft); margin:0;}
+
+  footer{border-top:1px solid var(--line); padding:22px 0;}
+  .footer-row{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
+  .footer-row .brand{font-family:"Cormorant Garamond",serif; font-size:1.1rem; font-weight:600;}
+  .foot-links{display:flex; gap:1.6em; list-style:none; margin:0; padding:0; font-size:.85rem; color:var(--ink-soft);}
+  .foot-links a{text-decoration:none;}
+  .foot-links a:hover{color:var(--accent);}
+  .foot-fine{margin-top:12px; font-size:.76rem; color:var(--ink-soft);}
+
+  @media (max-width: 900px){
+    .links, .nav-cta .btn-ghost{display:none;}
+    .nav-toggle{display:inline-flex;}
+    #mobileMenu:not([hidden]){display:flex;}
+    .hero .wrap{grid-template-columns:1fr;}
+    .services, .quotes{grid-template-columns:repeat(2,1fr);}
+    .values{grid-template-columns:1fr; gap:20px;}
+    .process{grid-template-columns:repeat(2,1fr);}
+    .step:nth-child(3){border-left:none;}
+    .about{grid-template-columns:1fr;}
+    .about-portrait{max-width:260px;}
+    .contact-grid{grid-template-columns:1fr;}
+    .gallery{grid-template-columns:repeat(2,1fr);}
+    .ig-scroll{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; overflow:visible;}
+    .ig-tile{flex:auto; border-radius:10px;}
+    .ig-dots{display:none;}
+  }
+  @media (max-width: 640px){
+    .wrap{padding:0 20px;}
+    .nav{padding:12px 20px;}
+    section{padding:36px 0;}
+    section.tight{padding:22px 0;}
+    .hero{padding:24px 0 20px;}
+    .section-head{margin-bottom:20px;}
+    .cta-band{padding:26px 22px; border-radius:20px;}
+    .services, .quotes, .process, .gallery{grid-template-columns:1fr;}
+    .step{border-left:none; border-top:1px solid var(--line);}
+    .step:first-child{border-top:none;}
+    .hero-meta{gap:1.2em; flex-wrap:wrap; margin-top:1.4em; padding-top:1em;}
+    .cta-band .btn{width:100%; border-radius:14px; text-align:center;}
+    .footer-row{flex-direction:column; align-items:flex-start;}
+    .radio-row{flex-direction:column;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .nav-toggle span{transition:none;}
+    .btn{transition:none;}
+  }
+</style>
+
+<header class="site">
+  <div class="nav">
+    <a class="brand" href="#top">
+      <svg viewBox="0 0 32 32" fill="none"><path d="M4 20c3-8 8-12 12-12s9 4 12 12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M8 20c2-5 5.5-8 8-8s6 3 8 8" stroke="var(--accent)" stroke-width="1.4" stroke-linecap="round"/></svg>
+      <span class="brand-text">
+        <strong>Giorgiana Bertolino</strong>
+        <small>Esperta in trucco permanente</small>
+      </span>
+    </a>
+    <ul class="links">
+      <li><a href="#servizi">Servizi</a></li>
+      <li><a href="#processo">Come funziona</a></li>
+      <li><a href="#risultati">Risultati</a></li>
+      <li><a href="#chi-sono">Chi sono</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="#contatti">Contatti</a>
+      <a class="btn btn-primary" href="#hero-form">Consulenza gratuita</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Apri il menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav id="mobileMenu" hidden>
+    <a href="#servizi">Servizi</a>
+    <a href="#processo">Come funziona</a>
+    <a href="#risultati">Risultati</a>
+    <a href="#instagram">Instagram</a>
+    <a href="#chi-sono">Chi sono</a>
+    <a href="#contatti">Contatti</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Brow Artistry · Microblading &amp; Powder Brows</p>
+        <h1>Sopracciglia disegnate <em>tratto dopo tratto</em>, non riempite a caso.</h1>
+        <p class="lede">Studio specializzato in tecniche di pigmentazione semipermanente: mappatura su misura del viso, hairstrokes uno a uno e colori miscelati sulla tua carnagione. Il risultato: <strong>sopracciglia che sembrano vere, tutti i giorni</strong>.</p>
+        <div class="hero-meta">
+          <div><strong>+7 anni</strong><span>di esperienza in brow design</span></div>
+          <div><strong>600+</strong><span>trattamenti eseguiti</span></div>
+          <div><strong>4,9/5</strong><span>valutazione media clienti</span></div>
+        </div>
+      </div>
+      <div class="hero-form-card" id="hero-form">
+        <p class="eyebrow">Prenota ora</p>
+        <h2>Fissa una consulenza gratuita</h2>
+        <p class="cta-note">Senza impegno: è solo un momento per conoscerci, con calma.</p>
+        <!-- TODO: sostituire YOUR_FORM_ID con l'ID reale del form creato su formspree.io (account vannarelli.fabrizio@gmail.com) -->
+        <form class="booking" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <input type="hidden" name="_subject" value="Nuova richiesta consulenza - Giorgiana Bertolino">
+          <div class="field">
+            <label for="nome">Nome e cognome</label>
+            <input id="nome" name="nome" type="text" placeholder="Il tuo nome" required>
+          </div>
+          <div class="field">
+            <label for="tel">Telefono</label>
+            <input id="tel" name="telefono" type="tel" placeholder="+39" required>
+          </div>
+          <div class="field">
+            <label>Hai già fatto un trattamento simile in precedenza?</label>
+            <div class="radio-row">
+              <label class="radio-opt"><input type="radio" name="gia-fatto" value="si">Sì</label>
+              <label class="radio-opt"><input type="radio" name="gia-fatto" value="no">No, prima volta</label>
+            </div>
+          </div>
+          <div class="field">
+            <label for="msg">Messaggio (facoltativo)</label>
+            <textarea id="msg" name="messaggio" rows="2" placeholder="Raccontami qualcosa in più, se vuoi"></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Fissa una consulenza gratuita, senza impegno</button>
+          <p class="form-note">Bozza: attivo l'invio reale non appena hai l'ID Formspree (vedi messaggio in chat).</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="servizi" class="alt-bg">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Trattamenti</p>
+        <h2>Una tecnica per ogni tipo di pelle e di risultato desiderato</h2>
+        <p>Ogni percorso inizia con una <strong>consulenza gratuita</strong> per scegliere insieme la tecnica più adatta a texture della pelle, forma del viso e stile di vita.</p>
+      </div>
+      <div class="services">
+        <div class="service-card">
+          <span class="swatch" style="background:#8A5A44"></span>
+          <h3>Microblading</h3>
+          <p>Hairstrokes realizzati a mano, uno per uno, per un <strong>effetto pelo naturale</strong> su pelli normali/secche.</p>
+          <span class="service-note">Adatto a te? Lo capiamo insieme in consulenza.</span>
+        </div>
+        <div class="service-card">
+          <span class="swatch" style="background:#B98166"></span>
+          <h3>Powder Brows</h3>
+          <p>Effetto sfumato <strong>"trucco appena fatto"</strong>, ideale su pelli miste o grasse e per chi ama un look più definito.</p>
+          <span class="service-note">Adatto a te? Lo capiamo insieme in consulenza.</span>
+        </div>
+        <div class="service-card">
+          <span class="swatch" style="background:#C79A82"></span>
+          <h3>Ombré Brows</h3>
+          <p>Tecnica ibrida: hairstrokes alla radice e sfumatura verso la coda, per un <strong>risultato graduale e naturale</strong>.</p>
+          <span class="service-note">Adatto a te? Lo capiamo insieme in consulenza.</span>
+        </div>
+        <div class="service-card">
+          <span class="swatch" style="background:#D9BBA8"></span>
+          <h3>Ritocco annuale</h3>
+          <p>Mantenimento del colore e della forma a <strong>12-18 mesi</strong> dall'ultimo trattamento completo.</p>
+          <span class="service-note">Adatto a te? Lo capiamo insieme in consulenza.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="vantaggi">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Perché farlo</p>
+        <h2>Non è una scorciatoia: è un lavoro di precisione che dura nel tempo</h2>
+        <p>Il risultato dipende dalla <strong>competenza di chi esegue il trattamento</strong>, non da quanto costa. Per questo ogni percorso parte da una consulenza gratuita e senza impegno, per capire insieme se è la scelta giusta per te.</p>
+      </div>
+      <div class="values">
+        <div class="value-card">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
+          <h3>Tempo ritrovato</h3>
+          <p>Niente più matita, gel o correzioni allo specchio ogni mattina: <strong>ti svegli con sopracciglia già definite</strong>, tutti i giorni.</p>
+        </div>
+        <div class="value-card">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l7 3v5c0 5-3 8.5-7 10-4-1.5-7-5-7-10V6l7-3Z"/></svg></span>
+          <h3>Sicurezza e igiene</h3>
+          <p><strong>Aghi monouso, pigmenti certificati</strong> e un protocollo igienico rigoroso in ogni fase del trattamento, dalla mappatura al ritocco.</p>
+        </div>
+        <div class="value-card">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 3v18M4 9h5"/></svg></span>
+          <h3>Autostima ritrovata</h3>
+          <p>Sentirti a tuo agio anche senza trucco, riconoscerti allo specchio: <strong>un piccolo gesto con un grande effetto</strong> sulla sicurezza in te, ogni giorno.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="processo">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Il percorso</p>
+        <h2>Come funziona, dalla mappatura al ritocco</h2>
+      </div>
+      <div class="process">
+        <div class="step">
+          <span class="num">01</span>
+          <h3>Consulenza e mappatura</h3>
+          <p>Analisi della forma naturale, disegno a matita della nuova forma e scelta del colore <strong>prima di iniziare</strong>.</p>
+        </div>
+        <div class="step">
+          <span class="num">02</span>
+          <h3>Prima sessione</h3>
+          <p>Anestetico topico, inserimento del pigmento hairstroke per hairstroke. <strong>Durata media 2 ore</strong>.</p>
+        </div>
+        <div class="step">
+          <span class="num">03</span>
+          <h3>Guarigione</h3>
+          <p>Nei <strong>28 giorni</strong> successivi il colore si assesta: normale se schiarisce del 30-40% prima del ritocco.</p>
+        </div>
+        <div class="step">
+          <span class="num">04</span>
+          <h3>Ritocco a 30-45 giorni</h3>
+          <p>Sessione <strong>inclusa</strong> per perfezionare forma e intensità del colore in base alla guarigione della pelle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="cta-band">
+        <p class="eyebrow">Prenditi il tuo tempo</p>
+        <h2>Non è una decisione da prendere di fretta</h2>
+        <p>La consulenza serve proprio a questo: capire insieme, <strong>senza impegno</strong>, se è la soluzione giusta per te. Nessuna pressione: solo le informazioni che ti servono per scegliere con calma.</p>
+        <a class="btn btn-primary" href="#hero-form">Fissa una consulenza gratuita, senza impegno</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="risultati" class="alt-bg">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Prima e dopo</p>
+        <h2>Trascina la linea per vedere la differenza</h2>
+        <p>Risultati reali, certificati <strong>PhiBrows</strong>. Foto pubblicate con il consenso delle clienti.</p>
+      </div>
+      <div class="gallery">
+        <figure>
+          <div class="ba-slider" data-ba>
+            <div class="ba-img ba-after">
+              <img src="img/caso1-dopo.jpg" alt="Sopracciglia dopo il trattamento, caso 1">
+            </div>
+            <div class="ba-img ba-before">
+              <img src="img/caso1-prima.jpg" alt="Sopracciglia prima del trattamento, caso 1">
+            </div>
+            <span class="ba-tag before">Prima</span>
+            <span class="ba-tag after">Dopo</span>
+            <div class="ba-divider">
+              <div class="ba-handle" tabindex="0" role="slider" aria-label="Trascina per confrontare prima e dopo" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 7l-4 5 4 5M16 7l4 5-4 5"/></svg>
+              </div>
+            </div>
+          </div>
+          <span class="ba-hint">Caso 1</span>
+        </figure>
+        <figure>
+          <div class="ba-slider" data-ba>
+            <div class="ba-img ba-after">
+              <img src="img/caso2-dopo.jpg" alt="Sopracciglia dopo il trattamento, caso 2">
+            </div>
+            <div class="ba-img ba-before">
+              <img src="img/caso2-prima.jpg" alt="Sopracciglia prima del trattamento, caso 2">
+            </div>
+            <span class="ba-tag before">Prima</span>
+            <span class="ba-tag after">Dopo</span>
+            <div class="ba-divider">
+              <div class="ba-handle" tabindex="0" role="slider" aria-label="Trascina per confrontare prima e dopo" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 7l-4 5 4 5M16 7l4 5-4 5"/></svg>
+              </div>
+            </div>
+          </div>
+          <span class="ba-hint">Caso 2</span>
+        </figure>
+        <figure>
+          <div class="ba-slider" data-ba>
+            <div class="ba-img ba-after">
+              <img src="img/caso3-dopo.jpg" alt="Sopracciglia dopo il trattamento, caso 3">
+            </div>
+            <div class="ba-img ba-before">
+              <img src="img/caso3-prima.jpg" alt="Sopracciglia prima del trattamento, caso 3">
+            </div>
+            <span class="ba-tag before">Prima</span>
+            <span class="ba-tag after">Dopo</span>
+            <div class="ba-divider">
+              <div class="ba-handle" tabindex="0" role="slider" aria-label="Trascina per confrontare prima e dopo" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 7l-4 5 4 5M16 7l4 5-4 5"/></svg>
+              </div>
+            </div>
+          </div>
+          <span class="ba-hint">Caso 3</span>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="instagram">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Seguici</p>
+        <h2>Gli ultimi lavori, direttamente da Instagram</h2>
+        <p>Riquadri segnaposto: da sostituire con gli scatti reali del profilo Instagram (su desktop scorrono, su mobile sono in griglia come nel profilo).</p>
+      </div>
+      <div class="ig-scroll" id="igScroll">
+        <a class="ig-tile" href="#" target="_blank" rel="noopener" aria-label="Post Instagram 1">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="6" y="6" width="36" height="36" rx="9"/><circle cx="24" cy="24" r="9"/><circle cx="33.5" cy="14.5" r="1.4" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a class="ig-tile" href="#" target="_blank" rel="noopener" aria-label="Post Instagram 2">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="6" y="6" width="36" height="36" rx="9"/><circle cx="24" cy="24" r="9"/><circle cx="33.5" cy="14.5" r="1.4" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a class="ig-tile" href="#" target="_blank" rel="noopener" aria-label="Post Instagram 3">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="6" y="6" width="36" height="36" rx="9"/><circle cx="24" cy="24" r="9"/><circle cx="33.5" cy="14.5" r="1.4" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a class="ig-tile" href="#" target="_blank" rel="noopener" aria-label="Post Instagram 4">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="6" y="6" width="36" height="36" rx="9"/><circle cx="24" cy="24" r="9"/><circle cx="33.5" cy="14.5" r="1.4" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a class="ig-tile" href="#" target="_blank" rel="noopener" aria-label="Post Instagram 5">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="6" y="6" width="36" height="36" rx="9"/><circle cx="24" cy="24" r="9"/><circle cx="33.5" cy="14.5" r="1.4" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a class="ig-tile" href="#" target="_blank" rel="noopener" aria-label="Post Instagram 6">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="6" y="6" width="36" height="36" rx="9"/><circle cx="24" cy="24" r="9"/><circle cx="33.5" cy="14.5" r="1.4" fill="currentColor" stroke="none"/></svg>
+        </a>
+      </div>
+      <div class="ig-dots" id="igDots"></div>
+    </div>
+  </section>
+
+  <section id="chi-sono" class="alt-bg">
+    <div class="wrap about">
+      <figure class="about-portrait">
+        <img src="img/giorgiana.png" alt="Giorgiana Bertolino, brow artist">
+      </figure>
+      <div class="about-body">
+        <p class="eyebrow">Chi sono</p>
+        <h2 style="font-size:2rem; margin-top:.3em;">Giorgiana Bertolino</h2>
+        <p>Mi occupo esclusivamente di sopracciglia da <strong>oltre 7 anni</strong>. Ho iniziato come truccatrice, poi mi sono specializzata in tecniche di pigmentazione perché credo che il dettaglio delle sopracciglia cambi l'intero viso. Per le clienti sono semplicemente Gio. Ogni mappatura è <strong>disegnata a mano, in studio</strong>, davanti allo specchio insieme alla cliente.</p>
+        <div class="credentials">
+          <div><strong>7+</strong><span>anni di esperienza</span></div>
+          <div><strong>3</strong><span>certificazioni internazionali</span></div>
+          <div><strong>600+</strong><span>trattamenti seguiti</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Testimonianze</p>
+        <h2>Cosa dicono le clienti</h2>
+        <p>Recensioni segnaposto: sostituire con quelle reali (Google, Instagram) prima della pubblicazione.</p>
+      </div>
+      <div class="quotes">
+        <div class="quote-card">
+          <p>"Dopo anni di matita ogni mattina, finalmente <strong>mi sveglio già pronta</strong>. Il risultato è naturalissimo."</p>
+          <div class="quote-who"><span class="dot">M.</span><span>Marta, cliente powder brows</span></div>
+        </div>
+        <div class="quote-card">
+          <p>"La mappatura fatta insieme prima di iniziare mi ha fatto sentire sicura. <strong>Zero ansia, risultato perfetto</strong>."</p>
+          <div class="quote-who"><span class="dot">S.</span><span>Sara, cliente microblading</span></div>
+        </div>
+        <div class="quote-card">
+          <p>"<strong>Attenzione ai dettagli incredibile</strong>, anche nel ritocco a distanza di un anno. Consigliatissima."</p>
+          <div class="quote-who"><span class="dot">E.</span><span>Elena, cliente ombré brows</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contatti" class="alt-bg">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Contatti</p>
+        <h2>Studio SM Estetica</h2>
+        <p>Giorgiana Bertolino, brow artist. Trovi il modulo per fissare la tua consulenza gratuita <a href="#hero-form" style="color:var(--accent); font-weight:600;">qui in alto</a>, oppure scrivimi direttamente ai contatti qui sotto.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="info-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <div><strong>Indirizzo studio</strong><span>Da confermare</span></div>
+        </div>
+        <div class="info-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 5h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 14l5 2v4a2 2 0 0 1-2 2C9.5 22 2 14.5 2 7a2 2 0 0 1 2-2Z"/></svg>
+          <div><strong>Telefono</strong><a href="tel:+393481180868">348 1180868</a></div>
+        </div>
+        <div class="info-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6" fill="currentColor" stroke="none"/></svg>
+          <div><strong>Instagram</strong><span>Da confermare</span></div>
+        </div>
+        <div>
+          <div class="hours"><span>Mar - Ven</span><span>10:00 - 19:00</span></div>
+          <div class="hours"><span>Sabato</span><span>10:00 - 16:00</span></div>
+          <div class="hours"><span>Dom - Lun</span><span>Chiuso</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <a class="brand" href="#top">Giorgiana Bertolino</a>
+    <ul class="foot-links">
+      <li><a href="#servizi">Servizi</a></li>
+      <li><a href="#instagram">Instagram</a></li>
+      <li><a href="#contatti">Contatti</a></li>
+    </ul>
+  </div>
+  <div class="wrap">
+    <p class="foot-fine">Studio SM Estetica — Giorgiana Bertolino. Bozza di lavoro, alcuni contenuti sono ancora segnaposto da confermare.</p>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.ba-slider').forEach(function(slider){
+    var handle = slider.querySelector('.ba-handle');
+    var dragging = false;
+
+    function setPos(clientX){
+      var rect = slider.getBoundingClientRect();
+      var pct = ((clientX - rect.left) / rect.width) * 100;
+      pct = Math.max(0, Math.min(100, pct));
+      slider.style.setProperty('--pos', pct + '%');
+      handle.setAttribute('aria-valuenow', Math.round(pct));
+    }
+
+    slider.addEventListener('pointerdown', function(e){
+      dragging = true;
+      slider.setPointerCapture(e.pointerId);
+      setPos(e.clientX);
+    });
+    slider.addEventListener('pointermove', function(e){
+      if(dragging) setPos(e.clientX);
+    });
+    slider.addEventListener('pointerup', function(){ dragging = false; });
+    slider.addEventListener('pointercancel', function(){ dragging = false; });
+
+    handle.addEventListener('keydown', function(e){
+      var cur = parseFloat(getComputedStyle(slider).getPropertyValue('--pos')) || 50;
+      var next = cur;
+      if(e.key === 'ArrowLeft') next = Math.max(0, cur - 5);
+      else if(e.key === 'ArrowRight') next = Math.min(100, cur + 5);
+      else if(e.key === 'Home') next = 0;
+      else if(e.key === 'End') next = 100;
+      else return;
+      e.preventDefault();
+      slider.style.setProperty('--pos', next + '%');
+      handle.setAttribute('aria-valuenow', Math.round(next));
+    });
+  });
+
+  (function(){
+    var navToggle = document.getElementById('navToggle');
+    var mobileMenu = document.getElementById('mobileMenu');
+    if(!navToggle || !mobileMenu) return;
+    navToggle.addEventListener('click', function(){
+      var open = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!open));
+      mobileMenu.hidden = open;
+    });
+    mobileMenu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        navToggle.setAttribute('aria-expanded', 'false');
+        mobileMenu.hidden = true;
+      });
+    });
+  })();
+
+  (function(){
+    var scroller = document.getElementById('igScroll');
+    var dotsWrap = document.getElementById('igDots');
+    if(!scroller || !dotsWrap || !('IntersectionObserver' in window)) return;
+    var tiles = Array.prototype.slice.call(scroller.querySelectorAll('.ig-tile'));
+    if(!tiles.length) return;
+    tiles.forEach(function(tile, i){
+      var dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'ig-dot';
+      dot.setAttribute('aria-label', 'Vai alla foto ' + (i + 1));
+      dot.addEventListener('click', function(){
+        tile.scrollIntoView({behavior:'smooth', inline:'start', block:'nearest'});
+      });
+      dotsWrap.appendChild(dot);
+    });
+    var dots = Array.prototype.slice.call(dotsWrap.children);
+    if(dots.length) dots[0].classList.add('active');
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        var idx = tiles.indexOf(entry.target);
+        if(idx === -1 || !entry.isIntersecting || entry.intersectionRatio <= 0.6) return;
+        dots.forEach(function(d){ d.classList.remove('active'); });
+        dots[idx].classList.add('active');
+      });
+    }, {root: scroller, threshold: [0.6]});
+    tiles.forEach(function(tile){ observer.observe(tile); });
+  })();
+
+  (function(){
+    var form = document.querySelector('form.booking');
+    if(!form) return;
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var btn = form.querySelector('button[type="submit"]');
+      var originalText = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Invio in corso…';
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(function(res){
+        if(res.ok){
+          window.location.href = 'grazie.html';
+        } else {
+          throw new Error('Invio non riuscito');
+        }
+      }).catch(function(){
+        btn.disabled = false;
+        btn.textContent = originalText;
+        alert('Non è stato possibile inviare la richiesta. Riprova, oppure scrivi/chiama direttamente ai contatti in fondo alla pagina.');
+      });
+    });
+  })();
+
+  (function(){
+    if (typeof fbq !== 'function') return;
+    var fired = false;
+    function checkScroll(){
+      if (fired) return;
+      var scrollTop = window.scrollY || document.documentElement.scrollTop;
+      var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (docHeight <= 0) return;
+      if ((scrollTop / docHeight) * 100 >= 50) {
+        fbq('trackCustom', 'Scroll50');
+        fired = true;
+        window.removeEventListener('scroll', checkScroll);
+      }
+    }
+    window.addEventListener('scroll', checkScroll, { passive: true });
+  })();
+</script>
