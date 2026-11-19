@@ -15,6 +15,7 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '495818734690282');
 fbq('track', 'PageView');
+fbq('track', 'ViewContent');
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=495818734690282&ev=PageView&noscript=1" /></noscript>
 
@@ -469,8 +470,7 @@ fbq('track', 'PageView');
         <p class="eyebrow">Prenota ora</p>
         <h2>Fissa una consulenza gratuita</h2>
         <p class="cta-note">Senza impegno: è solo un momento per conoscerci, con calma.</p>
-        <!-- TODO: sostituire YOUR_FORM_ID con l'ID reale del form creato su formspree.io (account vannarelli.fabrizio@gmail.com) -->
-        <form class="booking" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <form class="booking" action="https://formspree.io/f/mnpdzolj" method="POST">
           <input type="hidden" name="_subject" value="Nuova richiesta consulenza - Giorgiana Bertolino">
           <div class="field">
             <label for="nome">Nome e cognome</label>
@@ -492,7 +492,6 @@ fbq('track', 'PageView');
             <textarea id="msg" name="messaggio" rows="2" placeholder="Raccontami qualcosa in più, se vuoi"></textarea>
           </div>
           <button class="btn btn-primary" type="submit">Fissa una consulenza gratuita, senza impegno</button>
-          <p class="form-note">Bozza: attivo l'invio reale non appena hai l'ID Formspree (vedi messaggio in chat).</p>
         </form>
       </div>
     </div>
@@ -898,19 +897,11 @@ fbq('track', 'PageView');
   })();
 
   (function(){
-    if (typeof fbq !== 'function') return;
-    var fired = false;
-    function checkScroll(){
-      if (fired) return;
-      var scrollTop = window.scrollY || document.documentElement.scrollTop;
-      var docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      if (docHeight <= 0) return;
-      if ((scrollTop / docHeight) * 100 >= 50) {
-        fbq('trackCustom', 'Scroll50');
-        fired = true;
-        window.removeEventListener('scroll', checkScroll);
-      }
-    }
-    window.addEventListener('scroll', checkScroll, { passive: true });
+    var selector = 'a[href="#hero-form"], form.booking button[type="submit"], a[href^="tel:"]';
+    document.addEventListener('click', function(e){
+      var el = e.target.closest(selector);
+      if (!el || typeof fbq !== 'function') return;
+      fbq('track', 'InitiateCheckout', { content_name: el.textContent.trim() });
+    });
   })();
 </script>
