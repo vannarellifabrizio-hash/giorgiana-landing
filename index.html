@@ -158,6 +158,34 @@ fbq('track', 'ViewContent');
   .form-card .btn{width:100%; margin-top:6px; padding:1.15em 1em; font-size:.92rem;}
   .form-card .reassure{margin:14px 0 0; text-align:center; font-size:.85rem; font-weight:600; color:var(--ink-soft);}
 
+
+  /* ---- Fascia numeri ---- */
+  .numbers{
+    padding:0; background:linear-gradient(180deg, var(--black) 0%, var(--black-2) 100%);
+    border-top:1px solid var(--gold); border-bottom:1px solid var(--gold);
+  }
+  .numbers .wrap{display:grid; grid-template-columns:repeat(4,1fr);}
+  .num-item{padding:44px 16px 40px; text-align:center; position:relative;}
+  .num-item + .num-item::before{content:""; position:absolute; left:0; top:28%; bottom:28%; width:1px; background:var(--line-dark);}
+  .num-item b{
+    display:block; font-family:"Cormorant Garamond", Georgia, serif; font-weight:700; line-height:.9;
+    font-size:clamp(3.4rem, 7vw, 6.2rem); letter-spacing:-.02em;
+    background:linear-gradient(180deg, var(--gold-light) 0%, var(--gold) 55%, var(--gold-dark) 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    font-variant-numeric:lining-nums tabular-nums;
+  }
+  .num-item b small{font-size:.45em; letter-spacing:0;}
+  .num-item span{
+    display:block; margin-top:14px; font-size:.82rem; font-weight:800; letter-spacing:.2em; text-transform:uppercase; color:var(--on-dark);
+  }
+  @media (max-width:860px){
+    .numbers .wrap{grid-template-columns:1fr 1fr; padding:0;}
+    .num-item:nth-child(3)::before{display:none;}
+    .num-item:nth-child(n+3){border-top:1px solid var(--line-dark);}
+    .num-item{padding:30px 10px 28px;}
+    .num-item span{font-size:.7rem; letter-spacing:.14em; margin-top:10px;}
+  }
+
   /* ---- Prima e dopo ---- */
   .gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
   .gallery figure{margin:0;}
@@ -417,11 +445,6 @@ fbq('track', 'ViewContent');
         <p class="eyebrow">Microblading · Powder Brows · Roma Talenti</p>
         <h1>Sopracciglia perfette. <em>Ogni mattina.</em></h1>
         <p class="lede">Forma disegnata sul tuo viso, colore creato sulla tua pelle. <strong>Un risultato naturale che dura nel tempo</strong>, senza matita né gel.</p>
-        <div class="stats">
-          <div><b>7+</b><span>anni di esperienza</span></div>
-          <div><b>600+</b><span>trattamenti</span></div>
-          <div><b>4,9/5</b><span>clienti soddisfatte</span></div>
-        </div>
       </div>
       <div class="form-card" id="hero-form">
         <h2>Consulenza gratuita</h2>
@@ -452,6 +475,15 @@ fbq('track', 'ViewContent');
           <a class="wa-link" href="https://wa.me/393481180868?text=Ciao%20Giorgiana%2C%20vorrei%20prenotare%20la%20consulenza%20gratuita" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.85 9.85 0 0 0 12.04 2Zm5.8 14.15c-.24.68-1.42 1.3-1.95 1.34-.5.05-.97.23-3.27-.68-2.77-1.09-4.52-3.92-4.66-4.1-.13-.18-1.11-1.48-1.11-2.82 0-1.34.7-2 .95-2.27.25-.27.54-.34.72-.34h.52c.17 0 .39-.06.61.47.24.56.79 1.92.86 2.06.07.14.11.3.02.48-.09.18-.14.3-.27.46-.14.16-.29.36-.41.48-.14.14-.28.28-.12.56.16.27.71 1.17 1.52 1.9 1.05.93 1.93 1.22 2.2 1.36.27.14.43.11.59-.07.16-.18.68-.79.86-1.07.18-.27.36-.23.61-.14.25.09 1.59.75 1.86.89.27.14.45.2.52.32.07.11.07.66-.17 1.34Z"/></svg><span>Preferisci WhatsApp? <strong>Scrivimi qui</strong></span></a>
         </form>
       </div>
+    </div>
+  </section>
+
+  <section class="numbers" aria-label="Giorgiana in numeri">
+    <div class="wrap">
+      <div class="num-item"><b data-count="7" data-suffix="+">7+</b><span>anni di esperienza</span></div>
+      <div class="num-item"><b data-count="9">9</b><span>certificazioni</span></div>
+      <div class="num-item"><b data-count="600" data-suffix="+">600+</b><span>clienti</span></div>
+      <div class="num-item"><b>4,9<small>/5</small></b><span>valutazione media</span></div>
     </div>
   </section>
 
@@ -564,11 +596,6 @@ fbq('track', 'ViewContent');
         <h2>Giorgiana <em>Bertolino</em></h2>
         <p>Mi occupo <strong>solo di sopracciglia</strong> da oltre 7 anni. Ho iniziato come truccatrice, poi mi sono specializzata nella pigmentazione: il dettaglio delle sopracciglia cambia tutto il viso.</p>
         <p>Ogni forma la <strong>disegno a mano, davanti allo specchio, insieme a te</strong>.</p>
-        <div class="creds">
-          <div><b>7+</b><span>anni</span></div>
-          <div><b>9</b><span>certificazioni</span></div>
-          <div><b>600+</b><span>clienti</span></div>
-        </div>
       </div>
     </div>
   </section>
@@ -776,6 +803,29 @@ fbq('track', 'ViewContent');
         alert('Non è stato possibile inviare la richiesta. Riprova, oppure chiama il +39 348 118 0868.');
       });
     });
+  })();
+
+
+  (function(){
+    var els = document.querySelectorAll('.num-item b[data-count]');
+    if(!els.length || !('IntersectionObserver' in window)) return;
+    if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(!entry.isIntersecting) return;
+        var el = entry.target, target = +el.getAttribute('data-count'), suffix = el.getAttribute('data-suffix') || '';
+        io.unobserve(el);
+        var start = null, dur = 1400;
+        function step(t){
+          if(start === null) start = t;
+          var k = Math.min(1, (t - start) / dur), eased = 1 - Math.pow(1 - k, 3);
+          el.textContent = Math.round(target * eased) + suffix;
+          if(k < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      });
+    }, {threshold: 0.6});
+    els.forEach(function(el){ io.observe(el); });
   })();
 
   (function(){
