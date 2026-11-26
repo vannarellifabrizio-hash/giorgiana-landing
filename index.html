@@ -301,6 +301,35 @@ fbq('track', 'ViewContent');
   footer .wrap{display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;}
 
   /* ---- Responsive ---- */
+
+  .chat-row{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; max-width:1120px; margin:0 auto; align-items:stretch;}
+  .chat-row .chat{max-width:none; margin:0; display:flex; flex-direction:column;}
+  .chat-row .chat-body{flex:1;}
+  .chat-top strong{line-height:42px;}
+  @media (max-width:860px){
+    .chat-row{display:flex; overflow-x:auto; scroll-snap-type:x mandatory; gap:14px; margin:0 -20px; padding:0 20px 10px; scrollbar-width:none;}
+    .chat-row::-webkit-scrollbar{display:none;}
+    .chat-row .chat{flex:0 0 84%; scroll-snap-align:center;}
+  }
+  /* Barra promo */
+  .promo-bar{display:block; background:var(--gold); color:var(--black); text-align:center; text-decoration:none; padding:10px 16px; font-size:.82rem; font-weight:700; letter-spacing:.06em; line-height:1.35;}
+  .promo-bar b{letter-spacing:.18em; text-transform:uppercase; margin-right:10px;}
+  .promo-bar span{text-decoration:underline; text-underline-offset:3px;}
+  @media (max-width:560px){ .promo-bar{font-size:.76rem;} .promo-bar b{display:block; margin:0 0 2px;} }
+  /* Recensioni in stile chat */
+  .chat-reviews{margin-top:72px; text-align:center;}
+  .chat-reviews h3{font-size:clamp(1.8rem,3.2vw,2.4rem); margin-bottom:28px;}
+  .chat{max-width:380px; margin:0 auto; text-align:left; border:1px solid var(--line-dark); border-radius:22px; overflow:hidden; background:#0B141A; box-shadow:0 24px 60px rgba(0,0,0,.45);}
+  .chat-top{display:flex; align-items:center; gap:12px; padding:14px 16px; background:#1F2C33;}
+  .chat-top img{width:42px; height:42px; border-radius:50%; border:2px solid var(--gold); object-fit:cover;}
+  .chat-top strong{display:block; font-size:1.02rem; color:#E9EDEF; font-weight:600;}
+  .chat-top span{font-size:.78rem; color:#8696A0;}
+  .chat-wa{margin-left:auto; width:22px; height:22px; color:#25D366;}
+  .chat-body{padding:26px 14px 30px; display:flex; flex-direction:column; align-items:flex-end;
+    background-color:#0B141A; background-image:radial-gradient(rgba(201,162,74,.07) 1px, transparent 1px); background-size:14px 14px;}
+  .bubble{position:relative; max-width:86%; background:#005C4B; color:#E9EDEF; padding:9px 12px 20px; border-radius:10px 0 10px 10px; font-size:1rem; line-height:1.4;}
+  .bubble::after{content:""; position:absolute; top:0; right:-8px; border-top:10px solid #005C4B; border-right:8px solid transparent;}
+  .bubble .ticks{position:absolute; right:9px; bottom:4px; width:17px; height:11px; color:#53BDEB;}
   @media (max-width:1024px){
     .gallery{grid-template-columns:repeat(2,1fr);}
     .hero .wrap{grid-template-columns:1fr; gap:48px;}
@@ -349,7 +378,7 @@ fbq('track', 'ViewContent');
       transition:transform .25s ease;
     }
     .mobile-bar.is-hidden{transform:translateY(110%);}
-    .mobile-bar .btn{flex:1; min-height:52px; padding:.9em 1em; font-size:.82rem;}
+    .mobile-bar .btn{flex:1; min-height:52px; padding:.6em .8em; font-size:.74rem; line-height:1.25; text-align:center;}
     .mobile-bar .btn-call{flex:0 0 56px; padding:0; border:2px solid var(--gold); color:var(--gold); background:transparent;}
     .mobile-bar .btn-call svg{width:22px; height:22px;}
     .mobile-bar .btn-wa-icon{border-color:#1F8A4C; background:#1F8A4C; color:#fff;}
@@ -414,6 +443,8 @@ fbq('track', 'ViewContent');
 </head>
 <body>
 
+<a class="promo-bar" href="#hero-form"><b>Promo Black Friday</b><span>Prenota una consulenza gratuita</span></a>
+
 <header>
   <div class="wrap nav">
     <a class="brand" href="#top"><b>Giorgiana Bertolino</b><span>Trucco permanente</span></a>
@@ -424,7 +455,7 @@ fbq('track', 'ViewContent');
       <li><a href="#chi-sono">Chi sono</a></li>
       <li><a href="#contatti">Contatti</a></li>
     </ul>
-    <a class="btn btn-gold" href="#hero-form">Consulenza gratuita</a>
+    <a class="btn btn-gold" href="#hero-form">Prenota una consulenza gratuita</a>
     <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Apri il menu">
       <span></span><span></span><span></span>
     </button>
@@ -471,7 +502,7 @@ fbq('track', 'ViewContent');
             <label for="msg">Messaggio (facoltativo)</label>
             <textarea id="msg" name="messaggio" rows="2" placeholder="Raccontami cosa desideri"></textarea>
           </div>
-          <button class="btn btn-gold" type="submit">Prenota la consulenza gratuita</button>
+          <button class="btn btn-gold" type="submit">Prenota una consulenza gratuita</button>
           <p class="reassure">Nessun costo, nessun obbligo.</p>
           <a class="wa-link" href="https://wa.me/393481180868?text=Ciao%20Giorgiana%2C%20vorrei%20prenotare%20la%20consulenza%20gratuita" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.85 9.85 0 0 0 12.04 2Zm5.8 14.15c-.24.68-1.42 1.3-1.95 1.34-.5.05-.97.23-3.27-.68-2.77-1.09-4.52-3.92-4.66-4.1-.13-.18-1.11-1.48-1.11-2.82 0-1.34.7-2 .95-2.27.25-.27.54-.34.72-.34h.52c.17 0 .39-.06.61.47.24.56.79 1.92.86 2.06.07.14.11.3.02.48-.09.18-.14.3-.27.46-.14.16-.29.36-.41.48-.14.14-.28.28-.12.56.16.27.71 1.17 1.52 1.9 1.05.93 1.93 1.22 2.2 1.36.27.14.43.11.59-.07.16-.18.68-.79.86-1.07.18-.27.36-.23.61-.14.25.09 1.59.75 1.86.89.27.14.45.2.52.32.07.11.07.66-.17 1.34Z"/></svg><span>Preferisci WhatsApp? <strong>Scrivimi qui</strong></span></a>
         </form>
@@ -534,6 +565,42 @@ fbq('track', 'ViewContent');
         </figure>
       </div>
       <p class="gallery-note">Risultati reali, certificati <strong>PhiBrows</strong>. Foto pubblicate con il consenso delle clienti.</p>
+      <div class="chat-reviews">
+        <p class="eyebrow">Recensioni</p>
+        <h3>Cosa mi scrivono <em>le clienti.</em></h3>
+        <div class="chat-row">
+        <div class="chat" role="figure" aria-label="Messaggio WhatsApp di una cliente a Giorgiana">
+          <div class="chat-top">
+            <img src="img/giorgiana-avatar.jpg" width="120" height="120" alt="">
+            <div><strong>Giorgiana</strong></div>
+            <svg class="chat-wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"/></svg>
+          </div>
+          <div class="chat-body">
+            <p class="bubble">Professionista eccellente, ogni volta vengo da lontano per fare le sopracciglia con lei. Sei fantastica! <svg class="ticks" viewBox="0 0 18 11" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M1 6l3 3 6-7M7 9l1 1 7-8"/></svg></p>
+          </div>
+        </div>
+        <div class="chat" role="figure" aria-label="Messaggio WhatsApp di una cliente a Giorgiana">
+          <div class="chat-top">
+            <img src="img/giorgiana-avatar.jpg" width="120" height="120" alt="">
+            <div><strong>Giorgiana</strong></div>
+            <svg class="chat-wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"/></svg>
+          </div>
+          <div class="chat-body">
+            <p class="bubble">Ciao Giorgiana, sono tornata a casa e mio marito mi ha fatto i complimenti. Dice che ho uno sguardo fantastico 😂 <svg class="ticks" viewBox="0 0 18 11" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M1 6l3 3 6-7M7 9l1 1 7-8"/></svg></p>
+          </div>
+        </div>
+        <div class="chat" role="figure" aria-label="Messaggio WhatsApp di una cliente a Giorgiana">
+          <div class="chat-top">
+            <img src="img/giorgiana-avatar.jpg" width="120" height="120" alt="">
+            <div><strong>Giorgiana</strong></div>
+            <svg class="chat-wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"/></svg>
+          </div>
+          <div class="chat-body">
+            <p class="bubble">Sei fantastica! Sono contentissima, grazie ancora per la pazienza. <svg class="ticks" viewBox="0 0 18 11" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M1 6l3 3 6-7M7 9l1 1 7-8"/></svg></p>
+          </div>
+        </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -665,7 +732,7 @@ fbq('track', 'ViewContent');
         <p>Senza impegno, senza fretta. Solo le risposte che ti servono.</p>
       </div>
       <div class="cta-actions">
-        <a class="btn btn-black" href="#hero-form">Prenota ora</a>
+        <a class="btn btn-black" href="#hero-form">Prenota una consulenza gratuita</a>
         <a class="btn btn-wa" href="https://wa.me/393481180868?text=Ciao%20Giorgiana%2C%20vorrei%20prenotare%20la%20consulenza%20gratuita" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.85 9.85 0 0 0 12.04 2Zm5.8 14.15c-.24.68-1.42 1.3-1.95 1.34-.5.05-.97.23-3.27-.68-2.77-1.09-4.52-3.92-4.66-4.1-.13-.18-1.11-1.48-1.11-2.82 0-1.34.7-2 .95-2.27.25-.27.54-.34.72-.34h.52c.17 0 .39-.06.61.47.24.56.79 1.92.86 2.06.07.14.11.3.02.48-.09.18-.14.3-.27.46-.14.16-.29.36-.41.48-.14.14-.28.28-.12.56.16.27.71 1.17 1.52 1.9 1.05.93 1.93 1.22 2.2 1.36.27.14.43.11.59-.07.16-.18.68-.79.86-1.07.18-.27.36-.23.61-.14.25.09 1.59.75 1.86.89.27.14.45.2.52.32.07.11.07.66-.17 1.34Z"/></svg>WhatsApp</a>
       </div>
     </div>
@@ -703,7 +770,7 @@ fbq('track', 'ViewContent');
 </main>
 
 <div class="mobile-bar" id="mobileBar">
-  <a class="btn btn-gold" href="#hero-form">Consulenza gratuita</a>
+  <a class="btn btn-gold" href="#hero-form">Prenota una consulenza gratuita</a>
   <a class="btn btn-call btn-wa-icon" href="https://wa.me/393481180868?text=Ciao%20Giorgiana%2C%20vorrei%20prenotare%20la%20consulenza%20gratuita" target="_blank" rel="noopener" aria-label="Scrivi a Giorgiana su WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.85 9.85 0 0 0 12.04 2Zm5.8 14.15c-.24.68-1.42 1.3-1.95 1.34-.5.05-.97.23-3.27-.68-2.77-1.09-4.52-3.92-4.66-4.1-.13-.18-1.11-1.48-1.11-2.82 0-1.34.7-2 .95-2.27.25-.27.54-.34.72-.34h.52c.17 0 .39-.06.61.47.24.56.79 1.92.86 2.06.07.14.11.3.02.48-.09.18-.14.3-.27.46-.14.16-.29.36-.41.48-.14.14-.28.28-.12.56.16.27.71 1.17 1.52 1.9 1.05.93 1.93 1.22 2.2 1.36.27.14.43.11.59-.07.16-.18.68-.79.86-1.07.18-.27.36-.23.61-.14.25.09 1.59.75 1.86.89.27.14.45.2.52.32.07.11.07.66-.17 1.34Z"/></svg></a>
   <a class="btn btn-call" href="tel:+393481180868" aria-label="Chiama Giorgiana"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 14l5 2v4a2 2 0 0 1-2 2C9.5 22 2 14.5 2 7a2 2 0 0 1 2-2Z"/></svg></a>
 </div>
