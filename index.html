@@ -316,6 +316,15 @@ fbq('track', 'ViewContent');
   .promo-bar b{letter-spacing:.18em; text-transform:uppercase; margin-right:10px;}
   .promo-bar span{text-decoration:underline; text-underline-offset:3px;}
   @media (max-width:560px){ .promo-bar{font-size:.76rem;} .promo-bar b{display:block; margin:0 0 2px;} }
+  /* Black Friday */
+  .bf-badge{display:inline-block; margin:0 0 22px; padding:.55em 1.1em .5em; background:var(--gold); color:var(--black);
+    font-weight:800; font-size:1.35rem; letter-spacing:.22em; text-transform:uppercase; line-height:1; border-radius:4px;
+    box-shadow:0 0 0 1px var(--gold-light), 0 10px 30px rgba(201,162,74,.35);}
+  .form-card{position:relative;}
+  .bf-ribbon{position:absolute; top:-6px; left:50%; transform:translate(-50%,-55%); margin:0; white-space:nowrap;
+    background:var(--black); color:var(--gold); border:2px solid var(--gold); border-radius:999px;
+    padding:.5em 1.3em; font-weight:800; font-size:.82rem; letter-spacing:.18em; text-transform:uppercase;}
+  @media (max-width:560px){ .bf-badge{font-size:1.1rem; margin-bottom:16px;} .bf-ribbon{font-size:.74rem;} }
   /* Recensioni in stile chat */
   .chat-reviews{margin-top:72px; text-align:center;}
   .chat-reviews h3{font-size:clamp(1.8rem,3.2vw,2.4rem); margin-bottom:28px;}
@@ -443,8 +452,6 @@ fbq('track', 'ViewContent');
 </head>
 <body>
 
-<a class="promo-bar" href="#hero-form"><b>Promo Black Friday</b><span>Prenota una consulenza gratuita</span></a>
-
 <header>
   <div class="wrap nav">
     <a class="brand" href="#top"><b>Giorgiana Bertolino</b><span>Trucco permanente</span></a>
@@ -474,11 +481,13 @@ fbq('track', 'ViewContent');
   <section class="hero">
     <div class="wrap">
       <div>
+        <p class="bf-badge">Black Friday</p>
         <p class="eyebrow">Microblading · Powder Brows · Roma Talenti</p>
         <h1>Sopracciglia perfette. <em>Ogni mattina.</em></h1>
         <p class="lede">Forma disegnata sul tuo viso, colore creato sulla tua pelle. <strong>Un risultato naturale che dura nel tempo</strong>, senza matita né gel.</p>
       </div>
       <div class="form-card" id="hero-form">
+        <p class="bf-ribbon">Promo Black Friday</p>
         <h2>Consulenza gratuita</h2>
         <p class="sub">Senza impegno. Ti richiamo io per fissarla.</p>
         <form class="booking" action="https://formspree.io/f/mnpdzolj" method="POST">
